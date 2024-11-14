@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: whitesmoke;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by 3D effects */
+}
+
+/* Navbar Styling */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: #af7ad5;
+}
+
+header nav ul li {
+    margin: 0 15px;
+    transform: rotateY(20deg); /* Initial 3D rotation */
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+header nav ul li:hover {
+    transform: rotateY(0deg) scale(1.1); /* Scale and reset rotation on hover */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.4s ease;
+}
+
+header nav ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Hero Section with 3D Effects */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: black;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    transform: rotateY(15deg);
+    transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.hero-content:hover h1 {
+    transform: rotateY(0deg) scale(1.05); /* Pop-out effect */
+    color: #ffba08;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    transform: translateZ(30px); /* 3D pop-out effect */
+    transition: transform 0.5s ease;
+}
+
+.hero-content:hover p {
+    transform: translateZ(0); /* Reset on hover */
+}
+
+/* Social Media Icon 3D Hover Animation */
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    color: dodgerblue;
+    margin: 0 10px;
+    font-size: 44px;
+    transition: transform 0.4s ease, color 0.3s ease;
+    transform: perspective(500px) rotateX(20deg); /* 3D Rotation */
+}
+
+.social-icons a:hover {
+    transform: rotateX(0deg) rotateY(10deg) scale(1.2); /* Enhanced hover effect */
+    color: orangered; /* Brighter color on hover */
+}
+
+/* Hero Image with 3D Effect */
+.hero-image img {
+    max-width: auto;
+    transition: transform 0.7s ease;
+    transform: perspective(1000px) rotateY(25deg); /* Initial 3D rotation */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image:hover img {
+    transform: rotateY(0deg) scale(1.1); /* Scale and reset rotation on hover */
+}
+
+/* Smooth Scrolling for Internal Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Reveal Animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Download CV Button Styling */
+.cv-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: gold;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.4);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #444;
+    color: #ffd700;
+    transform: translateY(-5px) scale(1.05); /* Hover lift effect */
+    box-shadow: 0 8px 20px rgba(255, 223, 0, 0.6); /* Stronger shadow on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .hero-content {
+        max-width: 100%; /* Full width for content */
+        text-align: center; /* Center align text */
+    }
+
+    .hero-content h1 {
+        font-size: 36px; /* Responsive font size */
+    }
+
+    .hero-content p {
+        font-size: 20px; /* Responsive font size */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center align social icons */
+    }
+
+    .social-icons a {
+        font-size: 36px; /* Responsive icon size */
+    }
+
+    img {
+        width: 80%; /* Responsive image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        padding: 10px; /* Reduce padding */
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Space between nav items */
+    }
+
+    .hero-content h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    .hero-content p {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+}

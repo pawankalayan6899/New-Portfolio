@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Pavan Kalyan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+         
+@media (max-width: 1200px) {
+            .navbar {
+                padding: 8px; /* Smaller padding for larger tablets */
+            }
+        
+            .hero-content h1 {
+                font-size: 36px; /* Adjust heading size */
+            }
+        
+            .hero-content p {
+                font-size: 18px; /* Adjust paragraph size */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .navbar {
+                flex-direction: column; /* Stack navbar items */
+                align-items: center; /* Center align */
+            }
+        
+            .nav-link {
+                margin: 5px 0; /* Spacing between nav items */
+            }
+        
+            .hero-content h1 {
+                font-size: 32px; /* Adjust heading size */
+            }
+        }
+           
+        * {
+            box-sizing: border-box; /* Use box-sizing for uniform padding and borders */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0; /* Remove padding from lists */
+        }
+
+        /* Style for images to ensure consistent sizes */
+        img {
+            width: 100px; /* Set fixed width */
+            height: 100px; /* Set fixed height */
+            object-fit: cover; /* Resize to fit within box while preserving aspect ratio */
+            border-radius: 5px; /* Optional: Adds slight rounding to corners */
+            margin: 10px; /* Space between images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+        }
+
+        /* Hover effects for images */
+        img:hover {
+            transform: translateY(-5px) scale(1.1); /* Move image up and scale it on hover */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+        }
+
+        h2 {
+            color: gold; /* Title colors */
+        }
+
+        li {
+            margin-bottom: 15px; /* Space between list items */
+            color: whitesmoke; /* List item text color */
+        }
+
+        nav {
+            margin-bottom: 20px; /* Space below the navigation */
+        }
+
+        header nav ul {
+            display: flex; /* Display navigation items in a row */
+            /* Space evenly between navigation items */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Work Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="skills">
+        <h2>Skills Overview</h2><br>
+        <br>
+        <div>
+            <!-- All images at the top -->
+            <img src="htmlnew.webp" alt="HTML">
+            <img src="css.webp" alt="CSS">
+            <img src="javascript.png" alt="JavaScript">
+            <img src="react.png" alt="React.js">
+            <img src="github-logo.png" alt="GitHub">
+            <img src="responsive.jpg" alt="Responsive Design">
+            <img src="fetch api.png" alt="Fetch API">
+            <img src="problem solving.jpg" alt="Problem Solving">
+            <img src="debugging.png" alt="Debugging">
+            <img src="network.jpg" alt="Network Skills">
+        </div>
+
+        <h2>Frontend Developer Skills</h2> <br>
+        <br>
+        <ul>
+            <li><strong>HTML & CSS:</strong> Proficient in building responsive and user-friendly websites with modern HTML5 and CSS3 techniques.</li>
+            <li><strong>JavaScript:</strong> experience with JavaScript as well as ES6+ features. Proficient in DOM manipulation and event handling.</li>
+            <li><strong>React.js:</strong> Experienced in building dynamic, single-page applications using React.js. Familiar with React Hooks and state management using Redux.</li>
+            <li><strong>Version Control (Git):</strong> Proficient in using Git for version control, including GitHub for collaboration and code deployment.</li>
+            <li><strong>Responsive Web Design:</strong> Experienced in designing and developing websites that work across different devices and screen sizes.</li>
+            <li><strong>APIs & Fetch:</strong> Knowledgeable in consuming APIs using Fetch and Axios for dynamic data integration.</li>
+            <li><strong>Problem-Solving & Debugging:</strong> Strong debugging skills and analytical approach to solve front-end issues.</li>
+        </ul>
+
+        <h2>Network Engineer Skills</h2> <br>
+        <br>
+        <ul>
+            <li>Expertise in OSI model layers, TCP/IP, DNS, DHCP, FTP, HTTP, HTTPS, and SNMP protocols</li>
+            <li>Network security knowledge, including firewalls and VPNs</li>
+            <li>Experienced with network diagnostic tools such as Wireshark</li>
+            <li>Strong understanding of subnetting, VLANs, and CIDR notation</li>
+        </ul>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            background-color: #af7ad5;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* About Section Styles */
+        #about {
+            padding: 20px; /* Add padding to the about section */
+            text-align: center; /* Center the text */
+        }
+
+        #about h2 {
+            color: gold;
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        #about p {
+            margin-bottom: 20px; /* Space below the paragraph */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        img {
+            width: 300px; /* Width of the image */
+            height: auto; /* Maintain aspect ratio */
+            transform: perspective(600px) rotateX(10deg) rotateY(5deg); /* Add 3D effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+            margin-left: 30px; /* Left margin for the image */
+        }
+
+        img:hover {
+            transform: perspective(500px) rotateY(10deg) scale(1.5); /* Enhance 3D effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            header nav ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center align the items */
+            }
+
+            header nav ul li {
+                margin: 5px 0; /* Margin between nav items */
+            }
+
+            img {
+                width: 100%; /* Responsive image width */
+                margin-left: 0; /* Remove left margin */
+                margin-top: 20px; /* Add top margin */
+            }
+
+            #about {
+                padding: 15px; /* Adjust padding */
+            }
+
+            #about h2 {
+                font-size: 28px; /* Responsive font size for heading */
+            }
+
+            #about p {
+                font-size: 16px; /* Responsive font size for paragraphs */
+            }
+        }
+
+        @media (max-width: 600px) {
+            header nav ul {
+                padding: 10px; /* Padding for smaller screens */
+            }
+
+            #about h2 {
+                font-size: 24px; /* Smaller heading font size */
+            }
+
+            #about p {
+                font-size: 14px; /* Smaller paragraph font size */
+            }
+
+            img {
+                width: 100%; /* Full width on small screens */
+                max-width: 300px; /* Cap max width */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Work Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            <li>Network Support Engineer with 2.7 years of IT experience, transitioning into Frontend Development with expertise in HTML, CSS, JavaScript, and the React.js framework.</li>
+            <li>Brings strong analytical and problem-solving skills to frontend projects, leveraging a solid technical foundation to create visually appealing, user-centric web interfaces.</li>
+            <li>Driven to apply technical knowledge in a new capacity, delivering high-quality, responsive web applications that enhance user experience.</li>
+        </p>
+        <img src="abt1.avif" alt="About Me Image">
+    </section>
+</body>
+
+</html>

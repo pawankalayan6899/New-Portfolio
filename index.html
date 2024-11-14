@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="png" href="portfolio.png">
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style> /* Responsive Media Queries */
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 8px; /* Smaller padding for larger tablets */
+            }
+        
+            .hero-content h1 {
+                font-size: 36px; /* Adjust heading size */
+            }
+        
+            .hero-content p {
+                font-size: 18px; /* Adjust paragraph size */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .navbar {
+                flex-direction: column; /* Stack navbar items */
+                align-items: center; /* Center align */
+            }
+        
+            .nav-link {
+                margin: 5px 0; /* Spacing between nav items */
+            }
+        
+            .hero-content h1 {
+                font-size: 32px; /* Adjust heading size */
+            }
+        }
+            </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="education.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="skills.html">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experience.html">Work Experience</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 style="color: gold;">Pavan Kalyan D</h1>
+            <p>I'm a passionate Frontend Developer.</p>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+
+            <!-- Download CV Button -->
+            <div class="download-cv">
+                <a href="Pavan_Kalyan_D_Frontend developer_CV.pdf" download class="cv-button">Download My CV</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="3d profile.jpg" alt="Pavan Kalyan D">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h2>Contact Me</h2>
+            <p><strong>Email:</strong> pawankalyan6899@example.com</p>
+            <p><strong>Phone:</strong> +91 8073197069</p>
+            <p><strong>Address:</strong> Banaswadi, Bangalore 560033, Karnataka </p>
+        </div>
+        <div class="footer-social-icons">
+            <h3>Follow Me</h3>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        footer {
+            background-color: #333; /* Dark background */
+            color: white; /* Text color */
+            padding: 10px; /* Padding for the footer */
+            text-align: center; /* Centered text */
+        }
+
+        footer h2, footer h3 {
+            margin: 10px 0; /* Margin for headings */
+        }
+
+        footer p {
+            margin: 5px 0; /* Margin for paragraph text */
+        }
+
+        .footer-social-icons {
+            margin-top: 10px; /* Margin for social icons */
+        }
+
+        .footer-social-icons a {
+            color: gold; /* Social icons color */
+            margin: 0 10px; /* Space between icons */
+            font-size: 24px; /* Size for social icons */
+        }
+
+        .footer-social-icons a:hover {
+            color: gold; /* Hover color for icons */
+        }
+    </style>
+</body>
+
+</html>

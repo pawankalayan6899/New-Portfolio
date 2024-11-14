@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Pavan Kalyan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex; /* Use flexbox for horizontal layout */
+            flex-wrap: wrap; /* Wrap items on smaller screens */
+        }
+
+        /* Create columns that sit next to each other */
+        .column {
+            flex: 33.33%; /* Each column takes up 1/3rd of the row */
+            padding: 5px; /* Padding around columns */
+        }
+
+        img {
+            width: 100%; /* Ensure images take full width of their container */
+            height: 550px; /* Set a fixed height for all images */
+            object-fit: cover; /* Crop the image to fit the container */
+            border-radius: 5px; /* Optional: Adds slight rounding to corners */
+        }
+
+        h2 {
+            color: gold;
+        }
+
+        p {
+            color: whitesmoke;
+            text-align: center;
+        }
+         
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 8px; /* Smaller padding for larger tablets */
+            }
+        
+            .hero-content h1 {
+                font-size: 36px; /* Adjust heading size */
+            }
+        
+            .hero-content p {
+                font-size: 18px; /* Adjust paragraph size */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .navbar {
+                flex-direction: column; /* Stack navbar items */
+                align-items: center; /* Center align */
+            }
+        
+            .nav-link {
+                margin: 5px 0; /* Spacing between nav items */
+            }
+        
+            .hero-content h1 {
+                font-size: 32px; /* Adjust heading size */
+            }
+        }
+           
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Work Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="education">
+        <h2>Education</h2><br>
+        <div class="row">
+            <div class="column">
+                <p>BE: Electronics and Communication Engineering - 6.8 CGPA</p>
+                <img src="college.jpg" alt="Gopalan college of engineering">
+            </div>
+
+            <div class="column">
+                <p>PUC: Narayan PU college - 63.45%</p>
+                <img src="pu.avif" alt="Narayan PU college">
+            </div>
+
+            <div class="column">
+                <p>SSLC: Florence High school - 70%</p>
+                <img src="school.avif" alt="Florence high school">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
