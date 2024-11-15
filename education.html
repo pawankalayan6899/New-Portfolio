@@ -7,6 +7,20 @@
     <title>Education - Pavan Kalyan</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+
+        /* Smooth Transition Styles */
+body {
+    opacity: 1; /* Ensure body starts fully visible */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in effect */
+}
         * {
             box-sizing: border-box;
         }
@@ -14,60 +28,89 @@
         .row {
             display: flex; /* Use flexbox for horizontal layout */
             flex-wrap: wrap; /* Wrap items on smaller screens */
+            justify-content: center; /* Center the columns */
         }
 
         /* Create columns that sit next to each other */
         .column {
             flex: 33.33%; /* Each column takes up 1/3rd of the row */
-            padding: 5px; /* Padding around columns */
+            padding: 10px; /* Padding around columns */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items in the column */
+        }
+
+        .img-wrapper {
+            width: 300px; /* Fixed width for circular image containers */
+            height: 300px; /* Fixed height for circular image containers */
+            border-radius: 50%; /* Make the wrapper circular */
+            border: 4px solid gold; /* Gold border */
+            overflow: hidden; /* Hide overflow to maintain circle shape */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Relative positioning for absolute child */
+            animation: float 3s infinite; /* Bubble effect animation */
         }
 
         img {
             width: 100%; /* Ensure images take full width of their container */
-            height: 550px; /* Set a fixed height for all images */
+            height: 100%; /* Ensure images take full height of their container */
             object-fit: cover; /* Crop the image to fit the container */
-            border-radius: 5px; /* Optional: Adds slight rounding to corners */
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+        }
+
+        /* Bubble effect keyframes */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         h2 {
             color: gold;
+            text-align: center; /* Center the heading */
         }
 
         p {
             color: whitesmoke;
             text-align: center;
         }
-         
+
         @media (max-width: 1200px) {
             .navbar {
                 padding: 8px; /* Smaller padding for larger tablets */
             }
-        
+
             .hero-content h1 {
                 font-size: 36px; /* Adjust heading size */
             }
-        
+
             .hero-content p {
                 font-size: 18px; /* Adjust paragraph size */
             }
         }
-        
+
         @media (max-width: 992px) {
             .navbar {
                 flex-direction: column; /* Stack navbar items */
                 align-items: center; /* Center align */
             }
-        
+
             .nav-link {
                 margin: 5px 0; /* Spacing between nav items */
             }
-        
+
             .hero-content h1 {
                 font-size: 32px; /* Adjust heading size */
             }
         }
-           
-
     </style>
 </head>
 
@@ -89,21 +132,51 @@
         <h2>Education</h2><br>
         <div class="row">
             <div class="column">
-                <p>BE: Electronics and Communication Engineering - 6.8 CGPA</p>
-                <img src="college.jpg" alt="Gopalan college of engineering">
+                <p>BE: Electronics and Communication Engineering - 6.8 CGPA</p><br>
+                <div class="img-wrapper">
+                    <img src="college.jpg" alt="Gopalan college of engineering">
+                </div>
             </div>
 
             <div class="column">
-                <p>PUC: Narayan PU college - 63.45%</p>
-                <img src="pu.avif" alt="Narayan PU college">
+                <p>PUC: Narayan PU college - 63.45%</p><br>
+                <div class="img-wrapper">
+                    <img src="pu.avif" alt="Narayan PU college">
+                </div>
             </div>
 
             <div class="column">
-                <p>SSLC: Florence High school - 70%</p>
-                <img src="school.avif" alt="Florence high school">
+                <p>SSLC: Florence High School - 70%</p><br>
+                <div class="img-wrapper">
+                    <img src="school.avif" alt="Florence High School">
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in effect when the page is loaded
+            document.body.classList.add('fade-in');
+    
+            // Handle link clicks for fade-out and navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    const href = this.getAttribute('href'); // Get the destination href
+    
+                    // Add fade-out class
+                    document.body.classList.add('fade-out');
+    
+                    // Redirect after fade-out transition
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timeout with the CSS transition duration
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
