@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Pavan Kalyan</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box; /* Use box-sizing for uniform padding and borders */
+        }
+
+        body {
+            background-color: #121212; /* Dark background for contrast */
+            color: whitesmoke; /* Default text color */
+            font-family: Arial, sans-serif; /* Font style */
+            text-align: center; /* Center text for the body */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+        }
+
+        #projects {
+            margin-top: 50px; /* Space above the projects section */
+            padding: 0 20px; /* Padding to prevent text touching edges on smaller screens */
+        }
+
+        h2 {
+            color: gold; /* Title colors */
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0; /* Remove padding from lists */
+        }
+
+        li {
+            margin-bottom: 15px; /* Space between list items */
+            line-height: 1.5; /* Improved readability */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #projects {
+                margin-top: 30px; /* Less margin for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px; /* Adjust heading size */
+            }
+
+            li {
+                font-size: 14px; /* Adjust list item size */
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -19,23 +72,44 @@
             </ul>
         </nav>
     </header>
-    
-    <section id="projects">
-        <h2 style="color: gold;">Projects</h2><br>
-        <br>
 
+    <section id="projects">
+        <h2>Projects</h2>
         <ul>
-            <li> 1. Hotel Booking System - HTML & CSS </li><br>
-            <li> 2. Restaurant Website - HTML & CSS</li><br>
-            <li> 3. Login and Signup Pages - HTML & CSS</li><br>
-            <li> 4. Multipage Login System - HTML & CSS</li><br>
-            <li> 5. Project Management Dashboard - HTML,CSS and JavaScript</li><br>
-            <li> 6. E-commerce landing page showcasing a catalog of products - HTML, CSS, and JavaScript. </li><br>
-            <li> 7. Customer Relationship Management (CRM) Dashboard - React.js</li><br>
-            <li> 8. Job Board Application - React.js</li><br><br>
+            <li>1. Hotel Booking System - HTML & CSS</li>
+            <li>2. Restaurant Website - HTML & CSS</li>
+            <li>3. Login and Signup Pages - HTML & CSS</li>
+            <li>4. Multipage Login System - HTML & CSS</li>
+            <li>5. Project Management Dashboard - HTML, CSS, and JavaScript</li>
+            <li>6. E-commerce landing page showcasing a catalog of products - HTML, CSS, and JavaScript.</li>
+            <li>7. Customer Relationship Management (CRM) Dashboard - React.js</li>
+            <li>8. Job Board Application - React.js</li>
         </ul>
     </section>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in effect when the page is loaded
+            document.body.classList.add('fade-in');
     
+            // Handle link clicks for fade-out and navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    const href = this.getAttribute('href'); // Get the destination href
+    
+                    // Add fade-out class
+                    document.body.classList.add('fade-out');
+    
+                    // Redirect after fade-out transition
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timeout with the CSS transition duration
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
