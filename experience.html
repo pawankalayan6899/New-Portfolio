@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work Experience</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box; /* Use box-sizing for uniform padding and borders */
+        }
+
+        body {
+            background-color: #121212; /* Dark background for contrast */
+            color: whitesmoke; /* Default text color */
+            font-family: Arial, sans-serif; /* Font style */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            text-align: center; /* Center text for the body */
+        }
+
+        main {
+            display: flex;
+            justify-content: center; /* Center the main section horizontally */
+            align-items: center; /* Center the main section vertically if needed */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        
+
+        h2 {
+            color: gold; /* Title colors */
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        h3, h4 {
+            color: dodgerblue; /* Consistent heading colors */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0; /* Remove padding from lists */
+        }
+
+        li {
+            margin-bottom: 10px; /* Space between list items */
+            line-height: 1.5; /* Improved readability */
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,29 +66,48 @@
 
     <main>
         <section class="experience">
-            <h2 style="color: gold;">Work Experience</h2><br>
-
+            <h2>Work Experience</h2><br>
             <div class="experience-item">
-                <h3><strong>Company:</strong>RIDENEXT Software Solutions Private Limited</h3>
+                <h3><strong>Company:</strong> RIDENEXT Software Solutions Private Limited</h3><br>
                 <p><strong>Role:</strong> Network Support Engineer</p>
-                <p><strong>Duration:</strong> July 2021 – Feb 2024</p>
+                <p><strong>Duration:</strong> July 2021 - Feb 2024</p>
                 <p><strong>Client Location:</strong> Chennai</p>
                 <p><strong>Client:</strong> NEC, Mavenir, DCMS, and Rakuten</p>
-                <p><strong>Location:</strong> Bengaluru, KA</p><br>
-                    <br>
-                <h4 style="color: gold;" > Key Responsibilities:</h4><br>
-                <br>
+                <p><strong>Location:</strong> Bengaluru, KA</p><br><br>
+                <h4>Key Responsibilities:</h4><br>
                 <ul>
-                    <li>Provided support for 4G and 5G ORUs, handling software upgrades, VLAN configuration, and patch management across multiple ORUs.</li><br>
-                    <li>Conducted troubleshooting for ORU-related issues in lab and field environments, performing detailed log analyses for resolution.</li><br>
-                    <li>Configured certificates and call home IPs according to customer requirements, ensuring compliance with security protocols.</li><br>
-                    <li>Coordinated with stakeholders for issue resolution related to PTP configuration and network synchronization.</li><br>
-                    <li>Produced daily reports and conducted root cause analyses on technical issues to improve network reliability and performance.</li><br>
+                    <li>Provided support for 4G and 5G ORUs, handling software upgrades, VLAN configuration, and patch management across multiple ORUs.</li>
+                    <li>Conducted troubleshooting for ORU-related issues in lab and field environments, performing detailed log analyses for resolution.</li>
+                    <li>Configured certificates and call home IPs according to customer requirements, ensuring compliance with security protocols.</li>
+                    <li>Coordinated with stakeholders for issue resolution related to PTP configuration and network synchronization.</li>
+                    <li>Produced daily reports and conducted root cause analyses on technical issues to improve network reliability and performance.</li>
                 </ul>
             </div>
         </section>
     </main>
-
-   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in effect when the page is loaded
+            document.body.classList.add('fade-in');
+    
+            // Handle link clicks for fade-out and navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    const href = this.getAttribute('href'); // Get the destination href
+    
+                    // Add fade-out class
+                    document.body.classList.add('fade-out');
+    
+                    // Redirect after fade-out transition
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timeout with the CSS transition duration
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
