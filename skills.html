@@ -7,69 +7,14 @@
     <title>Skills - Pavan Kalyan</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-
-         
-@media (max-width: 1200px) {
-            .navbar {
-                padding: 8px; /* Smaller padding for larger tablets */
-            }
-        
-            .hero-content h1 {
-                font-size: 36px; /* Adjust heading size */
-            }
-        
-            .hero-content p {
-                font-size: 18px; /* Adjust paragraph size */
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .navbar {
-                flex-direction: column; /* Stack navbar items */
-                align-items: center; /* Center align */
-            }
-        
-            .nav-link {
-                margin: 5px 0; /* Spacing between nav items */
-            }
-        
-            .hero-content h1 {
-                font-size: 32px; /* Adjust heading size */
-            }
-        }
-           
         * {
             box-sizing: border-box; /* Use box-sizing for uniform padding and borders */
         }
 
-        ul {
-            list-style-type: none; /* Remove bullet points from list */
-            padding: 0; /* Remove padding from lists */
-        }
-
-        /* Style for images to ensure consistent sizes */
-        img {
-            width: 100px; /* Set fixed width */
-            height: 100px; /* Set fixed height */
-            object-fit: cover; /* Resize to fit within box while preserving aspect ratio */
-            border-radius: 5px; /* Optional: Adds slight rounding to corners */
-            margin: 10px; /* Space between images */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
-        }
-
-        /* Hover effects for images */
-        img:hover {
-            transform: translateY(-5px) scale(1.1); /* Move image up and scale it on hover */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
-        }
-
-        h2 {
-            color: gold; /* Title colors */
-        }
-
-        li {
-            margin-bottom: 15px; /* Space between list items */
-            color: whitesmoke; /* List item text color */
+        body {
+            background-color: #121212; /* Dark background for contrast */
+            color: whitesmoke; /* Default text color */
+            font-family: Arial, sans-serif; /* Font style */
         }
 
         nav {
@@ -78,7 +23,88 @@
 
         header nav ul {
             display: flex; /* Display navigation items in a row */
-            /* Space evenly between navigation items */
+            justify-content: right; /* Center the navigation items */
+            list-style: none; /* Remove bullet points */
+            padding: 10; /* Remove padding from the ul */
+        }
+
+        header nav ul li {
+            margin: 0 15px; /* Space between navigation items */
+        }
+
+        header nav a {
+            text-decoration: none; /* Remove underline from links */
+            color: gold; /* Link text color */
+            font-weight: bold; /* Bold links */
+        }
+
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 8px; /* Smaller padding for larger tablets */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navbar {
+                flex-direction: column; /* Stack navbar items */
+                align-items: center; /* Center align */
+            }
+        }
+
+        h2 {
+            color: gold; /* Title colors */
+            text-align: center; /* Center align headings */
+            margin: 20px 0; /* Space around titles */
+        }
+
+        /* Container to hold images */
+        .image-container {
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: center; /* Center the contents */
+        }
+
+        /* Style for images to ensure consistent sizes */
+        .img-wrapper {
+            width: 120px; /* Adjusted fixed width for the circular container */
+            height: 120px; /* Adjusted fixed height for the circular container */
+            border-radius: 50%; /* Make it circular */
+            overflow: hidden; /* Hide overflow to maintain circle shape */
+            margin: 10px; /* Space between images */
+            display: flex; /* Center content */
+            justify-content: center; /* Center align */
+            align-items: center; /* Center vertically */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+            border: 2px solid aqua; /* Optional: Gold border for visual appeal */
+        }
+
+        img {
+            width: 100%; /* Ensure images take full width of their container */
+            height: 100%; /* Ensure images take full height of their container */
+            object-fit: cover; /* Resize to fit within box while preserving aspect ratio */
+            transition: transform 0.3s ease; /* Transition for image scaling */
+        }
+
+        /* Hover effects for the wrapper */
+        .img-wrapper:hover {
+            transform: scale(1.1); /* Scale image wrapper */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+        }
+
+        /* Hover effects for images */
+        img:hover {
+            transform: scale(1.1); /* Move image up and scale it on hover */
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0; /* Remove padding from lists */
+        }
+
+        li {
+            margin-bottom: 15px; /* Space between list items */
+            color: whitesmoke; /* List item text color */
         }
     </style>
 </head>
@@ -98,27 +124,45 @@
     </header>
 
     <section id="skills">
-        <h2>Skills Overview</h2><br>
-        <br>
-        <div>
-            <!-- All images at the top -->
-            <img src="htmlnew.webp" alt="HTML">
-            <img src="css.webp" alt="CSS">
-            <img src="javascript.png" alt="JavaScript">
-            <img src="react.png" alt="React.js">
-            <img src="github-logo.png" alt="GitHub">
-            <img src="responsive.jpg" alt="Responsive Design">
-            <img src="fetch api.png" alt="Fetch API">
-            <img src="problem solving.jpg" alt="Problem Solving">
-            <img src="debugging.png" alt="Debugging">
-            <img src="network.jpg" alt="Network Skills">
+        <h2>Skills Overview</h2>
+        <div class="image-container">
+            <!-- All images in circular wrappers -->
+            <div class="img-wrapper">
+                <img src="htmlnew.webp" alt="HTML">
+            </div>
+            <div class="img-wrapper">
+                <img src="css.webp" alt="CSS">
+            </div>
+            <div class="img-wrapper">
+                <img src="javascript.png" alt="JavaScript">
+            </div>
+            <div class="img-wrapper">
+                <img src="react.png" alt="React.js">
+            </div>
+            <div class="img-wrapper">
+                <img src="github-logo.png" alt="GitHub">
+            </div>
+            <div class="img-wrapper">
+                <img src="responsive.jpg" alt="Responsive Design">
+            </div>
+            <div class="img-wrapper">
+                <img src="fetch api.png" alt="Fetch API">
+            </div>
+            <div class="img-wrapper">
+                <img src="problem solving.jpg" alt="Problem Solving">
+            </div>
+            <div class="img-wrapper">
+                <img src="debugging.png" alt="Debugging">
+            </div>
+            <div class="img-wrapper">
+                <img src="network.jpg" alt="Network Skills">
+            </div>
         </div>
 
-        <h2>Frontend Developer Skills</h2> <br>
-        <br>
+        <h2>Frontend Developer Skills</h2>
         <ul>
             <li><strong>HTML & CSS:</strong> Proficient in building responsive and user-friendly websites with modern HTML5 and CSS3 techniques.</li>
-            <li><strong>JavaScript:</strong> experience with JavaScript as well as ES6+ features. Proficient in DOM manipulation and event handling.</li>
+            <li><strong>JavaScript:</strong> Experience with JavaScript as well as ES6+ features. Proficient in DOM manipulation and event handling.</li>
             <li><strong>React.js:</strong> Experienced in building dynamic, single-page applications using React.js. Familiar with React Hooks and state management using Redux.</li>
             <li><strong>Version Control (Git):</strong> Proficient in using Git for version control, including GitHub for collaboration and code deployment.</li>
             <li><strong>Responsive Web Design:</strong> Experienced in designing and developing websites that work across different devices and screen sizes.</li>
@@ -126,8 +170,7 @@
             <li><strong>Problem-Solving & Debugging:</strong> Strong debugging skills and analytical approach to solve front-end issues.</li>
         </ul>
 
-        <h2>Network Engineer Skills</h2> <br>
-        <br>
+        <h2>Network Engineer Skills</h2>
         <ul>
             <li>Expertise in OSI model layers, TCP/IP, DNS, DHCP, FTP, HTTP, HTTPS, and SNMP protocols</li>
             <li>Network security knowledge, including firewalls and VPNs</li>
@@ -135,6 +178,29 @@
             <li>Strong understanding of subnetting, VLANs, and CIDR notation</li>
         </ul>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in effect when the page is loaded
+            document.body.classList.add('fade-in');
+    
+            // Handle link clicks for fade-out and navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    const href = this.getAttribute('href'); // Get the destination href
+    
+                    // Add fade-out class
+                    document.body.classList.add('fade-out');
+    
+                    // Redirect after fade-out transition
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timeout with the CSS transition duration
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
