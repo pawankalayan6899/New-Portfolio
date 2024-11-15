@@ -7,6 +7,7 @@
     <title>About Me</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
     <style>
+
         /* General Reset */
         * {
             margin: 0;
@@ -54,16 +55,29 @@
             line-height: 1.6; /* Improve readability */
         }
 
+        /* Circular Image Wrapper */
+        .img-wrapper {
+            display: inline-block; /* Center the outer circle */
+            width: 320px; /* Width of the wrapper */
+            height: 320px; /* Height of the wrapper to make it a square */
+            border-radius: 50%; /* Make the wrapper circular */
+            border: 5px solid gold; /* Gold border */
+            overflow: hidden; /* Hide overflow to maintain circle shape */
+            position: relative; /* Position for inner image */
+        }
+
         img {
-            width: 300px; /* Width of the image */
-            height: auto; /* Maintain aspect ratio */
-            transform: perspective(600px) rotateX(10deg) rotateY(5deg); /* Add 3D effect */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
-            margin-left: 30px; /* Left margin for the image */
+            width: 100%; /* Make image fill the circular area */
+            height: 100%; /* Make image fill the height of the wrapper */
+            object-fit: cover; /* Ensure the image covers the wrapper without distortion */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+            position: absolute; /* Position it absolutely within the wrapper */
+            top: 0;
+            left: 0;
         }
 
         img:hover {
-            transform: perspective(500px) rotateY(10deg) scale(1.5); /* Enhance 3D effect on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
         }
 
@@ -78,10 +92,9 @@
                 margin: 5px 0; /* Margin between nav items */
             }
 
-            img {
-                width: 100%; /* Responsive image width */
-                margin-left: 0; /* Remove left margin */
-                margin-top: 20px; /* Add top margin */
+            .img-wrapper {
+                width: 250px; /* Adjust width for smaller screens */
+                height: 250px; /* Adjust height for smaller screens */
             }
 
             #about {
@@ -110,9 +123,9 @@
                 font-size: 14px; /* Smaller paragraph font size */
             }
 
-            img {
-                width: 100%; /* Full width on small screens */
-                max-width: 300px; /* Cap max width */
+            .img-wrapper {
+                width: 200px; /* Cap to smaller width */
+                height: 200px; /* Cap to smaller height */
             }
         }
     </style>
@@ -140,8 +153,34 @@
             <li>Brings strong analytical and problem-solving skills to frontend projects, leveraging a solid technical foundation to create visually appealing, user-centric web interfaces.</li>
             <li>Driven to apply technical knowledge in a new capacity, delivering high-quality, responsive web applications that enhance user experience.</li>
         </p>
-        <img src="abt1.avif" alt="About Me Image">
+        <div class="img-wrapper">
+            <img src="abt1.avif" alt="About Me Image">
+        </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in effect when the page is loaded
+            document.body.classList.add('fade-in');
+    
+            // Handle link clicks for fade-out and navigation
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default navigation
+                    const href = this.getAttribute('href'); // Get the destination href
+    
+                    // Add fade-out class
+                    document.body.classList.add('fade-out');
+    
+                    // Redirect after fade-out transition
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Match this timeout with the CSS transition duration
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
