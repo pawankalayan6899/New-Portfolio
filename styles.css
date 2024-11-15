@@ -15,6 +15,20 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll caused by 3D effects */
 }
 
+/* Smooth Transition Styles */
+body {
+    opacity: 1; /* Ensure body starts fully visible */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in effect */
+}
+
 /* Navbar Styling */
 header nav ul {
     list-style: none;
@@ -135,8 +149,9 @@ html {
 /* Download CV Button Styling */
 .cv-button {
     display: inline-block;
-    padding: 12px 25px;
-    margin-top: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Add this line to create space below the button */
     font-size: 18px;
     color: gold;
     background-color: #333;
