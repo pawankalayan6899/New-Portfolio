@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Pavan Kalyan</title>
+    <link rel="icon" type="png" href="portfolio.png">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> <!-- Stylish Font -->
+
     <style>
         * {
             box-sizing: border-box; /* Use box-sizing for uniform padding and borders */
@@ -14,7 +19,7 @@
         body {
             background-color: #121212; /* Dark background for contrast */
             color: whitesmoke; /* Default text color */
-            font-family: Arial, sans-serif; /* Font style */
+            font-family: Arial, sans-serif; /* General font style */
             text-align: center; /* Center text for the body */
             margin: 0; /* Remove default body margin */
             padding: 0; /* Remove default body padding */
@@ -22,7 +27,7 @@
 
         #projects {
             margin-top: 50px; /* Space above the projects section */
-            padding: 0 20px; /* Padding to prevent text touching edges on smaller screens */
+            padding: 0 20px; /* Prevent text from touching the edges on smaller screens */
         }
 
         h2 {
@@ -30,30 +35,81 @@
             margin-bottom: 20px; /* Space below the title */
         }
 
-        ul {
-            list-style-type: none; /* Remove bullet points from list */
-            padding: 0; /* Remove padding from lists */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns in the grid */
+            gap: 20px; /* Space between grid items */
         }
 
-        li {
-            margin-bottom: 15px; /* Space between list items */
-            line-height: 1.5; /* Improved readability */
+        .project-item {
+            background-color: #1e1e1e; /* Background for project items */
+            border-radius: 8px; /* Rounded corners for project items */
+            padding: 20px; /* Padding inside project items */
+            text-align: left; /* Align text to the left */
+            transition: transform 0.3s; /* Animation for hover effect */
         }
 
-        /* Responsive Design */
+        .project-item:hover {
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .project-item h3 {
+            font-family: 'Poppins', sans-serif; /* Applying the stylish font */
+            color: white; /* Heading color */
+            margin-bottom: 10px; /* Space below project heading */
+        }
+
+        .demo-button {
+            background-color: gold; /* Button background color */
+            color: black; /* Button text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* Remove underline from the link */
+            font-size: 14px; /* Font size for button text */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 10px; /* Space above the button */
+            display: inline-block; /* Display as inline block element */
+        }
+
+        .demo-button:hover {
+            opacity: 0.8; /* Slight transparency on hover */
+        }
+
+        .skill-used {
+            margin-top: 8px; /* Space between demo button and skills used */
+            font-size: 14px; /* Font size for skill text */
+            color: blue; /* Color for the skills text */
+        }
+
+        .in-progress {
+            color: orange; /* Color for indicating in-progress projects */
+            font-weight: bold; /* Make in-progress text bold */
+        }
+
+        /* Responsive Design for the grid */
         @media (max-width: 768px) {
-            #projects {
-                margin-top: 30px; /* Less margin for smaller screens */
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
             }
         }
 
         @media (max-width: 480px) {
+            .project-grid {
+                grid-template-columns: 1fr; /* Single column for very small screens */
+            }
+
             h2 {
                 font-size: 24px; /* Adjust heading size */
             }
 
-            li {
-                font-size: 14px; /* Adjust list item size */
+            .project-item {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+
+            .demo-button {
+                font-size: 14px; /* Adjust button size */
+                padding: 8px 16px; /* Adjust padding */
             }
         }
     </style>
@@ -61,46 +117,95 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="experience.html">Work Experience</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="education.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="skills.html">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experience.html">Work Experience</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li>1. Hotel Booking System - HTML & CSS</li>
-            <li>2. Restaurant Website - HTML & CSS</li>
-            <li>3. Login and Signup Pages - HTML & CSS</li>
-            <li>4. Multipage Login System - HTML & CSS</li>
-            <li>5. Project Management Dashboard - HTML, CSS, and JavaScript</li>
-            <li>6. E-commerce landing page showcasing a catalog of products - HTML, CSS, and JavaScript.</li>
-            <li>7. Customer Relationship Management (CRM) Dashboard - React.js</li>
-            <li>8. Job Board Application - React.js</li>
-        </ul>
+        <div class="project-grid">
+            <div class="project-item">
+                <h3>1. Hotel Booking System</h3>
+                <a href="https://pawankalayan6899.github.io/Hotel-Booking/" target="_blank" class="demo-button">Demo</a>
+                <p class="skill-used">HTML, CSS</p>
+            </div>
+            <div class="project-item">
+                <h3>2. Restaurant Website</h3>
+                <a href="https://pawankalayan6899.github.io/Restaurant/" target="_blank" class="demo-button">Demo</a>
+                <p class="skill-used">HTML, CSS</p>
+            </div>
+            <div class="project-item">
+                <h3>3. Sign up & Login Page</h3>
+                <a href="https://pawankalayan6899.github.io/Login-and-Sign-up-page/" target="_blank" class="demo-button">Demo</a>
+                <p class="skill-used">HTML, CSS</p>
+            </div>
+            <div class="project-item">
+                <h3>4. Multipage Login System</h3>
+                <a href="https://pawankalayan6899.github.io/Multi-step-registration/" target="_blank" class="demo-button">Demo</a>
+                <p class="skill-used">HTML, CSS</p>
+            </div>
+            <div class="project-item">
+                <h3>5. Project Management Dashboard</h3>
+                <p class="in-progress">In Progress</p>
+                <p class="skill-used">HTML, CSS, JavaScript</p>
+            </div>
+            <div class="project-item">
+                <h3>6. E-commerce Landing Page</h3>
+                <p class="in-progress">In Progress</p>
+                <p class="skill-used">HTML, CSS, JavaScript</p>
+            </div>
+            <div class="project-item">
+                <h3>7. CRM Dashboard</h3>
+                <p class="in-progress">In Progress</p>
+                <p class="skill-used">React.js</p>
+            </div>
+            <div class="project-item">
+                <h3>8. Job Board Application</h3>
+                <p class="in-progress">In Progress</p>
+                <p class="skill-used">React.js</p>
+            </div>
+        </div>
     </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Fade in effect when the page is loaded
             document.body.classList.add('fade-in');
-    
+
             // Handle link clicks for fade-out and navigation
             const links = document.querySelectorAll('a');
             links.forEach(link => {
                 link.addEventListener('click', function (event) {
                     event.preventDefault(); // Prevent default navigation
                     const href = this.getAttribute('href'); // Get the destination href
-    
+
                     // Add fade-out class
                     document.body.classList.add('fade-out');
-    
+
                     // Redirect after fade-out transition
                     setTimeout(() => {
                         window.location.href = href;
@@ -109,7 +214,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
